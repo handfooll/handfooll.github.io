@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>elkhan kozhoev</title>
+<meta name="description" content="Software engineering student. Games in Unity and Godot, Telegram bots in Python, websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* one column, project rows alternate image side; mono used only for stack/stats */
+:root {
+  --bg: #f2f4f1; --surface: #ffffff; --ink: #141a17; --muted: #5b665f; --line: #d9dfda; --accent: #2b6a4f;
+  --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0f1311; --surface: #171d1a; --ink: #e7ece9; --muted: #95a29a; --line: #26302b; --accent: #7cc7a2; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body);
+  padding: 0 max(18px, env(safe-area-inset-right)) 0 max(18px, env(safe-area-inset-left)); }
+main { max-width: 880px; margin: 0 auto; padding-block: 72px 64px; display: grid; gap: 72px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(40px, 7vw, 64px); line-height: 1; }
+h2 { font-size: 13px; font-family: var(--mono); font-weight: 400; color: var(--muted); letter-spacing: 0.04em; }
+h3 { font-size: 26px; line-height: 1.15; }
+p { margin: 0; max-width: 62ch; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.intro { display: grid; gap: 18px; }
+.intro p { font-size: 18px; color: var(--muted); }
+.intro p b { color: var(--ink); font-weight: 600; }
+.links { display: flex; flex-wrap: wrap; gap: 20px; font-weight: 600; }
+.work { display: grid; gap: 56px; }
+.proj { display: grid; grid-template-columns: 1fr 1.25fr; gap: 32px; align-items: center; }
+.proj:nth-child(even) .shot { order: 2; }
+.shot { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: grid; place-items: center; aspect-ratio: 4 / 3; max-width: 100%; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shot.contain img { object-fit: contain; padding: 24px; }
+.shot.pair { grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+.txt { display: grid; gap: 12px; }
+.stack { font: 12.5px/1.5 var(--mono); color: var(--muted); }
+.txt p { color: var(--ink); }
+.meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; font-weight: 600; }
+.status { font: 12px var(--mono); color: var(--accent); }
+.small { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.small div { border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 6px; }
+.small b { font-family: var(--display); font-size: 18px; }
+.small span { color: var(--muted); font-size: 14.5px; }
+.about { display: grid; gap: 14px; }
+.about p { color: var(--muted); }
+footer { max-width: 880px; margin: 0 auto; padding-block: 24px 40px; border-top: 1px solid var(--line); color: var(--muted); font: 12.5px var(--mono); }
+@media (max-width: 680px) {
+  main { padding-block: 48px; gap: 56px; }
+  .proj { grid-template-columns: 1fr; gap: 18px; }
+  .proj:nth-child(even) .shot { order: 0; }
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="intro">
+    <h1>elkhan kozhoev</h1>
+    <p><b>Software engineering student</b> at China University of Petroleum, from Bishkek. I make games in Unity and Godot, Telegram bots in Python, and the occasional website, and I write tests for all of it.</p>
+    <div class="links">
+      <a href="https://github.com/handfooll">github</a>
+      <a href="https://www.linkedin.com/in/elkhan-kozhoev-4551553ab">linkedin</a>
+    </div>
+  </section>
+
+  <section class="work">
+    <h2>projects</h2>
+
+    <article class="proj">
+      <div class="shot pair"><img src="img/graft.jpg" alt="GRAFT: four enemy families closing in on the player" loading="lazy"><img src="img/graft-biome.jpg" alt="GRAFT: the glass mire biome" loading="lazy"></div>
+      <div class="txt">
+        <span class="status">in progress · phases 0-4 done</span>
+        <h3>GRAFT</h3>
+        <p>Top-down 3D extraction game for iPhone. Fight through five biomes, graft enemy parts onto your body, and carry your loot home before it eats you. The game rules sit in their own engine-free C# layer, so most of it is tested without even starting Unity.</p>
+        <div class="stack">unity 6 · urp · c# · navmesh · 170+ tests · ios</div>
+        <div class="meta"><a href="https://github.com/handfooll/graft">code</a></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="shot contain"><img src="img/capy-logo.png" alt="CapyRescue logo" loading="lazy"></div>
+      <div class="txt">
+        <span class="status">playable · polishing</span>
+        <h3>CapyRescue</h3>
+        <p>Logic puzzle for phones: one capybara per row, column and region, none touching. Every board is generated on the spot and proven to have exactly one solution, and the daily puzzle works without any server.</p>
+        <div class="stack">godot 4 · gdscript · backtracking solver · 44 tests</div>
+        <div class="meta"><a href="https://github.com/handfooll/capyrescue">code</a></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="shot contain"><svg viewBox="0 0 240 160" width="70%" role="img" aria-label="Telegram order flow: catalog, cart, checkout, seller">
+        <g font-family="JetBrains Mono, monospace" font-size="11" fill="currentColor">
+          <rect x="8" y="20" width="96" height="30" rx="8" fill="none" stroke="currentColor" opacity=".5"/><text x="20" y="40">/catalog</text>
+          <rect x="136" y="20" width="96" height="30" rx="8" fill="none" stroke="currentColor" opacity=".5"/><text x="160" y="40">cart</text>
+          <rect x="8" y="110" width="96" height="30" rx="8" fill="none" stroke="currentColor" opacity=".5"/><text x="22" y="130">checkout</text>
+          <rect x="136" y="110" width="96" height="30" rx="8" fill="none" stroke="currentColor" opacity=".5"/><text x="150" y="130">→ seller</text>
+          <path d="M104 35h32M184 50v20H56v40M104 125h32" fill="none" stroke="currentColor" opacity=".5"/>
+        </g></svg></div>
+      <div class="txt">
+        <span class="status">demo · not deployed yet</span>
+        <h3>telegram-order-bot</h3>
+        <p>A shop inside Telegram for small sellers in Kyrgyzstan: catalog, cart, checkout with phone validation, and orders sent straight to the seller. Comes with importers that turn messy supplier price lists from 1688 into a clean catalog.</p>
+        <div class="stack">python 3.11 · aiogram 3 · sqlite · 190+ tests</div>
+        <div class="meta"><a href="https://github.com/handfooll/telegram-order-bot">code</a></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="shot pair"><img src="img/capito.webp" alt="Capito cafe concept site" loading="lazy"><img src="img/coffee-arte.webp" alt="Coffee Arte Gallery concept site" loading="lazy"></div>
+      <div class="txt">
+        <span class="status">live</span>
+        <h3>cafe sites</h3>
+        <p>Five concept websites for cafes and restaurants in Bishkek, each built around the place's own menu and photos. Hand-written HTML and CSS, no frameworks.</p>
+        <div class="stack">html · css · js · responsive</div>
+        <div class="meta"><a href="https://handfooll.github.io/cafe-demos/">see them</a><a href="https://handfooll.github.io/coffee-arte-demo/">coffee arte</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="about">
+    <h2>also</h2>
+    <div class="small">
+      <div><b>JPMorgan Chase job simulation</b><span>Spring Boot microservice with Kafka, JPA and REST, finished on Forage in Aug 2026.</span></div>
+      <div><b>Cindertab</b><span>Turns bank statement PDFs into CSV, QuickBooks, Xero or OFX right in the browser and checks the totals.</span></div>
+      <div><b>Languages</b><span>English (IELTS 8.0), Russian, Mandarin (HSK 4, 270/300).</span></div>
+    </div>
+  </section>
+</main>
+<footer>qingdao · bishkek</footer>
+</body>
+</html>
